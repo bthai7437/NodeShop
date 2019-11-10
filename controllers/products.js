@@ -1,6 +1,5 @@
 const products = [];
 exports.getAddProduct = (req, res, next) => {
-  //res.sendFile(path.join(rootDir, "views", "add-product.html"));
   res.render("add-product", {
     prod: products,
     pageTitle: "Add Products",
@@ -11,4 +10,13 @@ exports.getAddProduct = (req, res, next) => {
 exports.postAddProduct = (req, res, next) => {
   products.push({ title: req.body.title });
   res.redirect("/");
+};
+
+exports.getProducts = (req, res, next) => {
+  res.render("shop", {
+    prods: products,
+    pageTitle: "Shop",
+    hasProducts: products.length > 0,
+    path: "/"
+  });
 };

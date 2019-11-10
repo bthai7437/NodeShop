@@ -1,17 +1,8 @@
-<%- include('/includes/head.ejs')%>
+<%- include('includes/head.ejs')%>
   </head>
 
   <body>
-    <header class="main-header">
-      <nav class="main-header__nav">
-        <ul class="main-header__item-list">
-          <li class="main-header__item"><a class="active" href="/">Shop</a></li>
-          <li class="main-header__item">
-            <a href="/admin/add-product">Add Product</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <%- include('includes/navigation.ejs')%>
 
     <main>
       <%if (prods.length > 0) {%>
@@ -46,5 +37,4 @@
       <h1>No Products Available</h1>
       <% } %>
     </main>
-  </body>
-</html>
+  <%- include('includes/end.ejs') %>
